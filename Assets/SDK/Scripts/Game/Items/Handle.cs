@@ -198,5 +198,13 @@ namespace ThunderRoad
             reach = farthestDamagerDist - GetDefaultAxisLocalPosition();
         }
 
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+            Gizmos.color = Color.grey;
+            Gizmos.DrawWireSphere(Vector3.zero, reach);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(new Vector3(0, GetDefaultAxisLocalPosition(), 0), 0.03f);
+        }
     }
 }
